@@ -7,11 +7,11 @@ const pageTitle = "Mi blog de Astro aprendizaje";
 
 <BaseLayout pageTitle={pageTitle}>
   <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
-  <ul>
+  <div>
     {
       allPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost url={post.url} title={post.frontmatter.title} descripcion={post.frontmatter.description} fecha={post.frontmatter.pubDate}/>
       ))
     }
-  </ul>
+  </d>
 </BaseLayout>

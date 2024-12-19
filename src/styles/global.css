@@ -4,13 +4,18 @@ html {
 }
 
 html.dark {
-    background-color: #0d0950;
+    background-color: #121212;
     color: #fff;
 }
 
 .dark .nav-links a {
     color: #fff;
 }
+
+.dark .social {
+    color: #fff;
+}
+
 
 body {
     margin: 0 auto;
@@ -47,12 +52,12 @@ hamburger {
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff9776;
     display: none;
     margin: 0;
 }
 
 .nav-links a {
+    color: #121212;
     display: block;
     text-align: center;
     padding: 10px 0;
@@ -62,13 +67,53 @@ hamburger {
     text-transform: uppercase;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-    background-color: #ff9776;
-}
-
 .expanded {
     display: unset;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tag {
+    padding: 2px 4px;
+    font-size: em;
+    text-decoration: none;
+}
+
+.tag a {
+    color: #121212;
+    text-transform: uppercase;
+}
+
+.dark .tag a {
+    color: #fff;
+}
+
+.social {
+    color: #121212;
+    padding: 0.25rem .1rem;
+    text-decoration: underline;
+}
+
+.blog-post{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    color: #121212;
+    border: 1px solid #121212;
+    border-radius: 1em;
+    margin: 1em 0;
+    padding: .5em 2em .5em 2em;
+}
+.blog-post h3{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.blog-post p{
+    margin: 0;
 }
 
 @media screen and (min-width: 636px) {

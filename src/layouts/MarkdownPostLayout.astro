@@ -6,34 +6,24 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
   <p>Publicado el: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>Escrito por {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <div class="img">
+    {
+      frontmatter.images.map(
+        (img: {
+          url: string | null | undefined;
+          alt: string | null | undefined;
+        }) => <img src={img.url} width="300" alt={img.alt} />
+      )
+    }
+  </div>
   <slot />
   <div class="tags">
     {
       frontmatter.tags.map((tag: unknown) => (
         <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+          <a href={`/tags/${tag}`}>#{tag}</a>
         </p>
       ))
     }
   </div>
 </BaseLayout>
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>
